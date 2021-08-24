@@ -54,6 +54,40 @@ img {
   border-radius: 15px;
 }
 
+.score__wrapper {
+  position: absolute;
+  top: calc(50% - 304px);
+  left: calc(50% - 304px);
+}
+
+
+
+.label--score-all {
+  margin-left: 13em;
+
+  font-size: 30px;
+  text-align: right;
+  color: #c4ec2b;
+}
+
+
+
+.score {
+  padding: 0;
+
+  font-size: 50px;
+  color: #ffffff;
+
+  background: transparent;
+  border: none;
+}
+
+.score--all {
+  max-width: 65px;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
 .menu {
   position: absolute;
   top: calc(50% - 304px);

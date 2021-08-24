@@ -6,7 +6,7 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
 const ground = new Image();
-ground.src = "img/ground.png";
+ground.src = "img/ground.svg";
 
 const redBallImg = new Image();
 redBallImg.src = "img/food/red-ball.svg";
@@ -16,7 +16,8 @@ hedgehogImg.src = "img/food/hedgehog.svg";
 
 let box = 32;
 
-let score = 0;
+let scoreAll = document.querySelector('.score--all');
+scoreAll.value = 0;
 
 let redBall = {
   x: Math.floor((Math.random() * 17 + 1)) * box,
@@ -61,46 +62,40 @@ function drawGame() {
 
   ctx.drawImage(redBallImg, redBall.x, redBall.y);
 
-  ctx.drawImage(hedgehogImg, hedgehog.x, hedgehog.y);
+  // ctx.drawImage(hedgehogImg, hedgehog.x, hedgehog.y);
 
   for (let i = 0; i < snake.length; i++) {
     ctx.fillStyle = i == 0 ? "green" : "darkgreen";
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
   }
 
-  ctx.fillStyle = "white";
-  ctx.font = "50px Arial";
-  ctx.fillText(score, box * 2.5, box * 1.7);
-
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
   // Random
-  let random = function () {
-    let randomInt = Math.floor(Math.random());
-    console.log(randomInt);
-  }
 
+
+  
 
   if (snakeX == redBall.x && snakeY == redBall.y) {
-    score++;
+    scoreAll.value++;
     redBall = {
       x: Math.floor((Math.random() * 17 + 1)) * box,
-      y: Math.floor((Math.random() * 15 + 3)) * box,
+      y: Math.floor((Math.random() * 15 + 3)) * box
     };
   } else {
     snake.pop();
   }
 
-  if (snakeX == hedgehog.x && snakeY == hedgehog.y) {
-    score++;
-    hedgehog = {
-      x: Math.floor((Math.random() * 17 + 1)) * box,
-      y: Math.floor((Math.random() * 15 + 3)) * box,
-    };
-  } else {
-    snake.pop();
-  }
+  // if (snakeX == hedgehog.x && snakeY == hedgehog.y) {
+  //   scoreAll.value++;
+  //   hedgehog = {
+  //     x: Math.floor((Math.random() * 17 + 1)) * box,
+  //     y: Math.floor((Math.random() * 15 + 3)) * box
+  //   };
+  // } else {
+  //   snake.pop();
+  // }
 
   if (snakeX < box || snakeX > box * 17 ||
     snakeY < 3 * box || snakeY > box * 17)
