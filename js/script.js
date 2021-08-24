@@ -1,6 +1,6 @@
-//document.querySelector('.buttonStartGame').addEventListener('click', function () {
-
-// document.querySelector('.menu--active').classList.remove('menu--active');
+document.querySelector('.buttonStartGame').addEventListener('click', function () {
+document.querySelector('.menu--active').classList.remove('menu--active');
+});
 
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -62,7 +62,7 @@ function drawGame() {
 
   ctx.drawImage(redBallImg, redBall.x, redBall.y);
 
-  // ctx.drawImage(hedgehogImg, hedgehog.x, hedgehog.y);
+  ctx.drawImage(hedgehogImg, hedgehog.x, hedgehog.y);
 
   for (let i = 0; i < snake.length; i++) {
     ctx.fillStyle = i == 0 ? "green" : "darkgreen";
@@ -87,15 +87,15 @@ function drawGame() {
     snake.pop();
   }
 
-  // if (snakeX == hedgehog.x && snakeY == hedgehog.y) {
-  //   scoreAll.value++;
-  //   hedgehog = {
-  //     x: Math.floor((Math.random() * 17 + 1)) * box,
-  //     y: Math.floor((Math.random() * 15 + 3)) * box
-  //   };
-  // } else {
-  //   snake.pop();
-  // }
+  if (snakeX == hedgehog.x && snakeY == hedgehog.y) {
+    scoreAll.value++;
+    hedgehog = {
+      x: Math.floor((Math.random() * 17 + 1)) * box,
+      y: Math.floor((Math.random() * 15 + 3)) * box
+    };
+  } else {
+    snake.pop();
+  }
 
   if (snakeX < box || snakeX > box * 17 ||
     snakeY < 3 * box || snakeY > box * 17)
@@ -116,4 +116,4 @@ function drawGame() {
   snake.unshift(newHead);
 }
 let game = setInterval(drawGame, 100);
-//});
+
