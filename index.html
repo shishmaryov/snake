@@ -24,10 +24,35 @@
     <div class="menu__overlay">
       <ul class="menu__list">
         <li class="menu__item">
-            <button type="button" class="menu__button buttonStartGame">New game</button>
+          <p class="menu__title">Snake</p>
         </li>
         <li class="menu__item">
-            <button type="button" class="menu__button buttonOpenSettings">Settings</button>
+          <button type="button" class="menu__button buttonStartGame">New game</button>
+        </li>
+        <li class="menu__item">
+          <button type="button" class="menu__button buttonOpenSettings">Settings</button>
+        </li>
+        <li class="menu__item menu__item--icon">
+          <button class="menu__button">
+            <img src="img/achievements.svg" alt="achievements" class="menu__icon">
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="result">
+    <div class="result__overlay">
+      <ul class="result__list">
+        <li class="result__item">
+          Result:
+          <input type="text" readonly value="0" name="score" id="score" class="result__ball result__score"></input>
+        </li>
+        <li class="result__item">
+          Record:
+          <span class="result__ball result__record">...</span>
+        </li>
+        <li class="result__item">
+          <button class="result__button restart">Try again</button>
         </li>
       </ul>
     </div>
@@ -36,7 +61,8 @@
   <div class="score__wrapper">
     <label for="scoreAll" class="label label--score-all">
       score
-      <input type="text" readonly value="0" name="scoreAll" class="canvas__score score score--all"></input>
+      <input type="text" readonly value="0" name="scoreAll" id="scoreAll"
+        class="canvas__score score score--all"></input>
     </label>
   </div>
   <script src="js/script.js"></script>

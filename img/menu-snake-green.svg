@@ -1,0 +1,14 @@
+<svg width="424" height="203" viewBox="0 0 424 203" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M312.516 189H323C323.276 189 323.5 189.224 323.5 189.5C323.5 189.776 323.276 190 323 190H316.221C315.741 190 315.263 190.047 314.793 190.141L313.132 190.474C309.749 191.15 306.548 192.537 303.741 194.542L301 196.5L304.215 192.79C306.301 190.383 309.33 189 312.516 189Z" fill="#F76767"/>
+<path d="M301 196.5L304.215 192.79C306.301 190.383 309.33 189 312.516 189H323C323.276 189 323.5 189.224 323.5 189.5V189.5C323.5 189.776 323.276 190 323 190H316.221C315.741 190 315.263 190.047 314.793 190.141L313.132 190.474C309.749 191.15 306.548 192.537 303.741 194.542L301 196.5ZM301 196.5L289 200M289 200L286.5 199M289 200L286.5 202" stroke="#EE3737"/>
+<path d="M15 15H409V185H337.867" stroke="#006500" stroke-width="30" stroke-linecap="square"/>
+<path d="M15 15H409V185H337.867" stroke="url(#paint0_linear)" stroke-width="30" stroke-linecap="square"/>
+<circle cx="342" cy="175" r="5" fill="white"/>
+<circle cx="341.5" cy="174.5" r="1.5" fill="#4B4B4B"/>
+<defs>
+<linearGradient id="paint0_linear" x1="426.461" y1="25.421" x2="266.913" y2="25.421" gradientUnits="userSpaceOnUse">
+<stop stop-color="#004500"/>
+<stop offset="1" stop-color="#007D00"/>
+</linearGradient>
+</defs>
+</svg>
