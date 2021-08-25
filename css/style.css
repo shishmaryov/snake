@@ -265,6 +265,17 @@ img {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 5%, #ffffff 50%, rgba(255, 255, 255, 0) 95%);
 }
 
+.result__item--record {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.result__record {
+  margin: 0;
+}
+
 .result__ball {
   width: 30px;
   margin-left: 25px;
@@ -274,6 +285,8 @@ img {
   background: transparent;
   border: none;
 }
+
+.result__score {}
 
 .result__button {
   padding: 0;
