@@ -246,8 +246,7 @@ img {
   display: flex;
   align-items: center;
   width: max-content;
-  margin: auto auto;
-  margin-right: 0;
+  margin: auto auto 0 auto;
 
   font-size: 30px;
   line-height: 2.3;
