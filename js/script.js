@@ -1,4 +1,6 @@
-document.querySelector('.buttonStartGame').addEventListener('click', function () {
+let btnStartGame = document.querySelector('.buttonStartGame');
+
+btnStartGame.addEventListener('click', function () {
   document.querySelector('.menu--active').classList.remove('menu--active');
 });
 
@@ -21,6 +23,8 @@ scoreAll.value = 0;
 let score = document.querySelector('.result__score');
 score.value = 0;
 let record = document.querySelector('.result__record');
+let ball = document.querySelector('.result__ball');
+ball.style.maxWidth = score.value.length * 30 + "px";
 localStorage.setItem('record', scoreAll.value);
 
 
@@ -79,55 +83,10 @@ function drawGame() {
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
-  // // Random
-
-  // function getRndInt(min, max) {
-  //   return Math.floor(Math.random() * (max - min + 1)) + min;
-  // }
-
-  // let RndInt = (getRndInt(0, 10));
-
-  // if (snakeX == fish.x && snakeY == fish.y || snakeX == hedgehog.x && snakeY == hedgehog.y) {
-  //   if (RndInt < 5) {
-  //     ctx.drawImage(fishImg, fish.x, fish.y);
-  //     if (snakeX == fish.x && snakeY == fish.y) {
-  //       scoreAll.value++;
-  // score.value++;
-  // 
-  //       fish = {
-  //         x: Math.floor((Math.random() * 17 + 1)) * box,
-  //         y: Math.floor((Math.random() * 15 + 3)) * box
-  //       };
-  //     } else {
-  //       snake.pop();
-  //     }
-
-  //   } else if (RndInt > 5) {
-  //     ctx.drawImage(hedgehogImg, hedgehog.x, hedgehog.y);
-  //     if (snakeX == hedgehog.x && snakeY == hedgehog.y) {
-  //       scoreAll.value++;
-  // score.value++;
-  // 
-  //       hedgehog = {
-  //         x: Math.floor((Math.random() * 17 + 1)) * box,
-  //         y: Math.floor((Math.random() * 15 + 3)) * box
-  //       };
-  //     } else {
-  //       snake.pop();
-  //     }
-  //   }
-  //   console.log(RndInt);
-  // }
-
-  // if (snakeX !== fish.x && snakeY !== fish.y || snakeX !== hedgehog.x && snakeY !== hedgehog.y) {
-  //   snake.pop();
-  // }
-
-
-
   if (snakeX == fish.x && snakeY == fish.y) {
     scoreAll.value++;
     score.value++;
+    ball.style.maxWidth = score.value.length * 30 + "px";
 
     fish = {
       x: Math.floor((Math.random() * 17 + 1)) * box,
@@ -136,18 +95,6 @@ function drawGame() {
   } else {
     snake.pop();
   }
-
-  // if (snakeX == hedgehog.x && snakeY == hedgehog.y) {
-  //   scoreAll.value++;
-  // score.value++;
-  //
-  //   hedgehog = {
-  //     x: Math.floor((Math.random() * 17 + 1)) * box,
-  //     y: Math.floor((Math.random() * 15 + 3)) * box
-  //   };
-  // } else {
-  //   snake.pop();
-  // }
 
   if (snakeX < box || snakeX > box * 17 ||
     snakeY < 3 * box || snakeY > box * 17) {
@@ -169,10 +116,8 @@ function drawGame() {
 
   snake.unshift(newHead);
 }
+
 let game = setInterval(drawGame, 100);
-
-
-
 
 document.querySelector('.restart').addEventListener('click', function () {
   window.location.href = "./index.html";

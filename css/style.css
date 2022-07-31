@@ -190,6 +190,13 @@ img {
 
   background: transparent;
   border: none;
+  transition: 0.3s;
+}
+
+.menu__button:hover {
+  transition: 0.3s;
+  animation-name: shakeX;
+  color: green;
 }
 
 .result {
@@ -277,7 +284,6 @@ img {
 }
 
 .result__ball {
-  width: 30px;
   margin-left: 25px;
 
   font-size: 60px;
@@ -285,8 +291,6 @@ img {
   background: transparent;
   border: none;
 }
-
-.result__score {}
 
 .result__button {
   padding: 0;
@@ -296,3 +300,4 @@ img {
   background: transparent;
   border: none;
 }
+
